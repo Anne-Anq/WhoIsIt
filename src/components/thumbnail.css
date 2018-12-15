@@ -1,0 +1,15 @@
+.card-body {
+  padding: 0px;
+  width: 160px;
+  height: 20px;
+}
+.card-img-top {
+  height: 160px;
+  width: 160px;
+  margin: 5px;
+}
+.flipped {
+  background-color: black;
+  height: 180px;
+  width: 160px;
+}
