@@ -1,5 +1,9 @@
 const properties = [
   {
+    path: "hasScarf",
+    question: "Is that person wearing a scarf?"
+  },
+  {
     path: "hasGlasses",
     question: "Is that person wearing glasses?"
   },
@@ -22,6 +26,14 @@ const properties = [
   {
     path: "isMan",
     question: "Is that person a man?"
+  },
+  {
+    path: "hasTie",
+    question: "Is that person wearing a tie or a bowtie?"
+  },
+  {
+    path: "isBaby",
+    question: "Is she a baby?"
   }
 ];
 

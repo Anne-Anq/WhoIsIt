@@ -18,6 +18,10 @@
   color: white;
 }
 
+.container {
+  width: 100vw;
+  margin: auto;
+}
 .App-link {
   color: #61dafb;
 }
