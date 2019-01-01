@@ -34,12 +34,11 @@ class Grid extends Component {
     return (
       <div className="grid">
         {data.map((c, i) => {
-          console.log(`pictures/${c.name}.jpg`);
           return (
             <Thumbnail
               key={i}
               name={c.name}
-              img={`pictures/${c.name}.jpg`}
+              img={`peoplePix/${c.name}.jpg`}
               isFlipped={c.isFlipped}
             />
           );
