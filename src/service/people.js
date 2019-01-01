@@ -2,34 +2,39 @@ let people = [
   {
     name: "Alice",
     hasGlasses: true,
-    hasScarf: true
+    hasScarf: true,
+    hasCurlyHair: true
   },
   {
     name: "Anne",
     hasGlasses: true,
+    hasFacialHair: true,
     hasMustach: true
   },
   {
     name: "Bill",
-    hasMustach: true,
+    hasFacialHair: true,
+    hasGlasses: true,
+    hasHeadPiece: true,
     isMan: true
   },
-  {
-    name: "Diana",
-    hasBangs: true
-  },
+  // {
+  //   name: "Diana",
+  //   hasBangs: true
+  // },
   {
     name: "Eli",
     isBlonde: true,
-    hasHat: true
+    hasHat: true,
+    hasHeadPiece: true
   },
   {
     name: "Emika"
   },
-  {
-    name: "Emilien",
-    isMan: true
-  },
+  // {
+  //   name: "Emilien",
+  //   isMan: true
+  // },
   {
     name: "Emmanuelle"
   },
@@ -37,6 +42,7 @@ let people = [
     name: "Fathi",
     isMan: true,
     hasGlasses: true,
+    hasFacialHair: true,
     hasTie: true
   },
   {
@@ -54,23 +60,26 @@ let people = [
   {
     name: "Kenny",
     isMan: true,
-    hasMustach: true
+    hasFacialHair: true,
+    hasHeadPiece: true
   },
   {
     name: "Ludo",
-    hasHat: true,
+    hasHeadPiece: true,
     hasGlasses: true,
+    hasFacialHair: true,
     hasMustach: true,
     isMan: true
   },
   {
     name: "Marion",
-    hasHat: true
+    hasHeadPiece: true
   },
   {
     name: "Mathias",
-    hasHat: true,
+    hasHeadPiece: true,
     hasGlasses: true,
+    hasFacialHair: true,
     hasMustach: true,
     isMan: true,
     hasScarf: true
@@ -78,34 +87,36 @@ let people = [
   {
     name: "Mathieu",
     isBlonde: true,
-    hasMustach: true,
     isMan: true
   },
   {
     name: "Pedro",
     hasHat: true,
-    hasMustach: true,
+    hasHeadPiece: true,
+    hasFacialHair: true,
     isMan: true
   },
   {
     name: "Poisson",
     hasHat: true,
+    hasHeadPiece: true,
     isMan: true,
     hasScarf: true
   },
   {
     name: "Rosie",
-    hasHat: true
+    hasHat: true,
+    hasHeadPiece: true
   },
   {
     name: "Tagir",
     isMan: true
   },
-  {
-    name: "Tia",
-    isWoman: true,
-    isBaby: true
-  },
+  // {
+  //   name: "Tia",
+  //   isWoman: true,
+  //   isBaby: true
+  // },
   {
     name: "Tracey",
     hasGlasses: true,
@@ -113,15 +124,18 @@ let people = [
   },
   {
     name: "Willy",
+    hasHeadPiece: true,
     isMan: true
   },
   {
     name: "Yana",
-    hasHat: true,
+    hasHeadPiece: true,
     hasGlasses: true
   },
   {
-    name: "Zlatka"
+    name: "Zlatka",
+    hasWeddingDress: true,
+    hasHeadPiece: true
   }
 ];
 

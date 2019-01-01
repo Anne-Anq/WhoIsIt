@@ -10,15 +10,37 @@ class Game extends Grid {
     properties: getProperties(),
     remainingCounter: getPeople().length
   };
+  componentDidMount() {
+    let { properties, people } = { ...this.state };
+    properties.forEach(property => {
+      people.forEach(p =>
+        p[property.path] && p[property.path] === true
+          ? property.numberOfPeople++
+          : ""
+      );
+    });
 
+    this.setState({ properties });
+  }
+
+  findNextProperty(properties, val) {
+    properties.sort(
+      (a, b) =>
+        Math.abs(a.numberOfPeople - val / 2) -
+        Math.abs(b.numberOfPeople - val / 2)
+    );
+    console.log(val, properties);
+    return properties[0];
+  }
   render() {
     const { properties, people, remainingCounter } = this.state;
+
     return (
       <div className="container">
         <Grid data={people} />
         {properties.length >= 1 && remainingCounter > 1 && (
           <Question
-            property={properties[0]}
+            property={this.findNextProperty(properties, remainingCounter)}
             onClick={(path, value) => this.setProp(path, value)}
           />
         )}

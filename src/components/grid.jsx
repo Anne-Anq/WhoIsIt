@@ -15,6 +15,13 @@ class Grid extends Component {
         ((value && p[path] !== value) || (!value && p[path]))
       ) {
         p.isFlipped = true;
+        Object.keys(p).forEach(prop => {
+          if (prop !== "name") {
+            properties.map(property =>
+              property.path === prop ? property.numberOfPeople-- : ""
+            );
+          }
+        });
         remainingCounter--;
       }
       return p;
