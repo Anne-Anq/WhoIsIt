@@ -29,7 +29,6 @@ class Game extends Grid {
         Math.abs(a.numberOfPeople - val / 2) -
         Math.abs(b.numberOfPeople - val / 2)
     );
-    console.log(val, properties);
     return properties[0];
   }
   render() {
