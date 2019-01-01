@@ -38,7 +38,7 @@ class Grid extends Component {
             <Thumbnail
               key={i}
               name={c.name}
-              img={`peoplePix/${c.name}.jpg`}
+              img={`pictures/${c.name}.jpg`}
               isFlipped={c.isFlipped}
             />
           );
