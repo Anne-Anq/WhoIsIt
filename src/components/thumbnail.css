@@ -1,7 +1,6 @@
 .card-body {
   padding: 0px;
   width: 100%;
-  /* height: 20px; */
 }
 .card-img-top {
   width: 100%;
@@ -18,6 +17,14 @@
 }
 .flipped {
   background-color: black;
-  /* height: 160px;
-  width: 152px; */
+  color: #ffffff88;
+}
+.flipped img {
+  opacity: 0;
+}
+.flipped:hover {
+  color: #ffffff;
+}
+.flipped:hover img {
+  opacity: 1;
 }

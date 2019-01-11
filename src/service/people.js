@@ -20,23 +20,32 @@ let people = [
   },
   // {
   //   name: "Diana",
-  //   hasBangs: true
+  //   hasBangs: true,
+  //   isHolding: true
   // },
   {
     name: "Eli",
     isBlonde: true,
     hasHat: true,
-    hasHeadPiece: true
+    hasHeadPiece: true,
+    hasFur: true
   },
   {
-    name: "Emika"
+    name: "Emika",
+    hasScarf: true,
+    hasGlasses: true
   },
   // {
   //   name: "Emilien",
   //   isMan: true
   // },
   {
-    name: "Emmanuelle"
+    name: "Emmanuelle",
+    hasFacialHair: true,
+    hasMustach: true,
+    hasHat: true,
+    hasHeadPiece: true,
+    hasFur: true
   },
   {
     name: "Fathi",
@@ -46,16 +55,21 @@ let people = [
     hasTie: true
   },
   {
-    name: "Juju"
+    name: "Juju",
+    hasFur: true,
+    hasScarf: true
   },
   {
-    name: "Julia"
+    name: "Julia",
+    hasHeadPiece: true,
+    hasBangs: true
   },
   {
     name: "Ken",
     hasGlasses: true,
     hasTie: true,
-    isMan: true
+    isMan: true,
+    isHolding: true
   },
   {
     name: "Kenny",
@@ -69,11 +83,14 @@ let people = [
     hasGlasses: true,
     hasFacialHair: true,
     hasMustach: true,
-    isMan: true
+    isMan: true,
+    hasFur: true
   },
   {
     name: "Marion",
-    hasHeadPiece: true
+    hasHeadPiece: true,
+    hasHat: true,
+    hasFur: true
   },
   {
     name: "Mathias",
@@ -82,7 +99,8 @@ let people = [
     hasFacialHair: true,
     hasMustach: true,
     isMan: true,
-    hasScarf: true
+    hasScarf: true,
+    hasFur: true
   },
   {
     name: "Mathieu",
@@ -94,14 +112,16 @@ let people = [
     hasHat: true,
     hasHeadPiece: true,
     hasFacialHair: true,
-    isMan: true
+    isMan: true,
+    hasFur: true
   },
   {
     name: "Poisson",
     hasHat: true,
     hasHeadPiece: true,
     isMan: true,
-    hasScarf: true
+    hasScarf: true,
+    hasFur: true
   },
   {
     name: "Rosie",
@@ -112,11 +132,12 @@ let people = [
     name: "Tagir",
     isMan: true
   },
-  // {
-  //   name: "Tia",
-  //   isWoman: true,
-  //   isBaby: true
-  // },
+  {
+    name: "Tia",
+    isWoman: true,
+    isBaby: true,
+    isHolding: true
+  },
   {
     name: "Tracey",
     hasGlasses: true,
@@ -130,6 +151,8 @@ let people = [
   {
     name: "Yana",
     hasHeadPiece: true,
+    hasHat: true,
+    hasMustach: true,
     hasGlasses: true
   },
   {
@@ -141,10 +164,17 @@ let people = [
 
 const getPeople = () => {
   people = people.map(d => {
-    d.isFlipped = false;
+    d.isNotUsersChoice = false;
+    d.isNotCompsChoice = false;
     return d;
   });
   return people;
 };
 
-export default getPeople;
+const getOnePerson = () => {
+  const N = people.length;
+  const randomNum = Math.floor(Math.random() * (N + 1));
+  return people[randomNum];
+};
+
+export { getPeople, getOnePerson };

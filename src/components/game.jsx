@@ -1,52 +1,63 @@
 import React from "react";
 import Question from "./question";
 import Grid from "./grid";
-import getPeople from "../service/people";
+import { getPeople, getOnePerson } from "../service/people";
 import getProperties from "./../service/properties";
 
 class Game extends Grid {
   state = {
-    people: getPeople(),
-    properties: getProperties(),
-    remainingCounter: getPeople().length
+    people: [],
+    usersChoiceProperties: "",
+    compsChoiceProperties: "",
+    usersChoice: "",
+    compsOneChoice: "",
+    compsAnswer: "",
+    turn: 0
   };
   componentDidMount() {
-    let { properties, people } = { ...this.state };
-    properties.forEach(property => {
+    const people = getPeople();
+    let usersChoiceProperties = getProperties();
+    usersChoiceProperties.forEach(property => {
       people.forEach(p =>
         p[property.path] && p[property.path] === true
           ? property.numberOfPeople++
           : ""
       );
     });
+    const compsChoiceProperties = getProperties();
+    const usersChoice = getPeople();
+    const compsOneChoice = getOnePerson();
 
-    this.setState({ properties });
+    this.setState({
+      people,
+      usersChoiceProperties,
+      compsChoiceProperties,
+      usersChoice,
+      compsOneChoice
+    });
   }
 
-  findNextProperty(properties, val) {
-    properties.sort(
-      (a, b) =>
-        Math.abs(a.numberOfPeople - val / 2) -
-        Math.abs(b.numberOfPeople - val / 2)
-    );
-    return properties[0];
-  }
   render() {
-    const { properties, people, remainingCounter } = this.state;
+    const { usersChoiceProperties, usersChoice } = this.state;
 
     return (
       <div className="container">
-        <Grid data={people} />
-        {properties.length >= 1 && remainingCounter > 1 && (
+        <Grid
+          {...this.state}
+          onClick={person => this.toggleIsNotCompsChoice(person)}
+        />
+        {usersChoiceProperties.length >= 1 && usersChoice.length > 1 && (
           <Question
-            property={this.findNextProperty(properties, remainingCounter)}
+            {...this.state}
             onClick={(path, value) => this.setProp(path, value)}
           />
         )}
-        {properties.length >= 0 && remainingCounter === 1 && (
-          <div>You win!</div>
+        {usersChoiceProperties.length >= 0 && usersChoice.length === 1 && (
+          <div>
+            The computer guessed, it was {usersChoice[0].name}. You loose!
+          </div>
         )}
-        {properties.length === 0 && remainingCounter > 1 && (
+        {usersChoiceProperties.length === 0 && usersChoice.length > 1 && (
           <div>You Loose</div>
         )}
       </div>

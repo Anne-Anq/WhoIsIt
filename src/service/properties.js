@@ -63,6 +63,16 @@ const properties = [
     path: "hasWeddingDress",
     question: "Is she wearing a wedding dress?",
     numberOfPeople: 0
+  },
+  // {
+  //   path: "isHolding",
+  //   question: "Is that person holding something?",
+  //   numberOfPeople: 0
+  // },
+  {
+    path: "hasFur",
+    question: "Is that person wearing some kind of fur or feathers?",
+    numberOfPeople: 0
   }
 ];
 
