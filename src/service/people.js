@@ -161,20 +161,33 @@ let people = [
     hasHeadPiece: true
   }
 ];
-
-const getPeople = () => {
-  people = people.map(d => {
+const getNumOfPeople = num => {
+  const peopleOnly = people.map(p => ({ ...p }));
+  shuffleArray(peopleOnly);
+  return peopleOnly.slice(0, num);
+};
+const clone = arr => {
+  return arr.map(a => ({ ...a }));
+};
+const getPeopleAndAttr = array => {
+  const peopleAndAttr = array.map(d => {
     d.isNotUsersChoice = false;
     d.isNotCompsChoice = false;
     return d;
   });
-  return people;
+  return peopleAndAttr;
 };
 
-const getOnePerson = () => {
-  const N = people.length;
+const getOnePerson = arr => {
+  const N = arr.length;
   const randomNum = Math.floor(Math.random() * (N + 1));
-  return people[randomNum];
+  return arr[randomNum];
 };
 
-export { getPeople, getOnePerson };
+const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+};
+export { getNumOfPeople, getPeopleAndAttr, getOnePerson, clone };

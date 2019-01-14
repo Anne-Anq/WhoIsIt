@@ -8,12 +8,9 @@
   padding: 5px;
 }
 .card {
-  width: 20vw;
-  height: 25vw;
-  max-width: 140px;
-  max-height: 180px;
-  min-height: 110px;
-  margin: 1%;
+  width: 140px;
+  height: 175px;
+  margin: 10px;
 }
 .flipped {
   background-color: black;
@@ -27,4 +24,19 @@
 }
 .flipped:hover img {
   opacity: 1;
+}
+@media screen and (max-width: 450px) {
+  .card-body {
+    font-size: 0.7em;
+  }
+  .card {
+    width: 80px;
+    height: 100px;
+    margin: 2px;
+  }
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    padding: 2px;
+  }
 }

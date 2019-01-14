@@ -26,12 +26,14 @@ class Grid extends Component {
   };
   toggleIsNotCompsChoice = person => {
     let { people } = { ...this.state };
+    let compsPossibleChoices = [];
     people = people.map(p => {
       if (p.name === person.name) p.isNotCompsChoice = !p.isNotCompsChoice;
+      if (!p.isNotCompsChoice) compsPossibleChoices.push(p);
       return p;
     });
 
-    this.setState({ people });
+    this.setState({ people, compsPossibleChoices });
   };
 
   computerPlayed = (path, value) => {
@@ -69,7 +71,7 @@ class Grid extends Component {
   render() {
     const { people, onClick } = this.props;
     return (
-      <div className="grid">
+      <div id="grid" className="grid">
         {people.map((c, i) => {
           return (
             <Thumbnail

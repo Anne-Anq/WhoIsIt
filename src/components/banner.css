@@ -1,0 +1,43 @@
+.banner {
+  background-color: rgba(160, 142, 142, 0.301);
+  padding: 20px;
+}
+
+.alert-container {
+  height: 130px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.alert {
+  width: 80%;
+  max-width: 500px;
+  margin: 5px;
+  animation: alert-appear 0.5s cubic-bezier(0.17, 0.67, 0.73, 1.23) forwards;
+}
+
+@media screen and (max-width: 450px) {
+  .App {
+    font-size: 0.8em;
+  }
+  .banner {
+    background-color: rgba(160, 142, 142, 0.301);
+    padding: 5px;
+  }
+  .alert {
+    width: 90%;
+    margin: 5px;
+    padding: 0.15rem;
+  }
+  .alert-container {
+    height: 75px;
+  }
+}
+@keyframes alert-appear {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}

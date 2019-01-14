@@ -76,8 +76,18 @@ const properties = [
   }
 ];
 
-const getProperties = () => {
-  return properties;
+const getProperties = peopleArr => {
+  const propertiesSelected = properties
+    .map(p => {
+      const prop = { ...p };
+      peopleArr.forEach(person => {
+        if (person[prop.path] && person[prop.path] === true)
+          prop.numberOfPeople++;
+      });
+      return prop;
+    })
+    .filter(p => p.numberOfPeople !== 0);
+  return propertiesSelected;
 };
 
 export default getProperties;

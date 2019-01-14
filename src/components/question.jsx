@@ -10,15 +10,15 @@ class Question extends Component {
 
   startInstruction = ({ onClick }) => {
     return (
-      <div>
+      <React.Fragment>
         <Intro />
-        <ButtonYes text="Got it!" onClick={() => onClick()} />
-      </div>
+        <ButtonYes text="I chose someone" onClick={() => onClick()} />
+      </React.Fragment>
     );
   };
   usersQuestion = ({ onClick, compsChoiceProperties }) => {
     return (
-      <div className="input-group">
+      <React.Fragment className="input-group">
         <select
           className="custom-select"
           id="inputGroupSelect04"
@@ -46,7 +46,7 @@ class Question extends Component {
             Ask
           </button>
         </div>
-      </div>
+      </React.Fragment>
     );
   };
   handleChange = event => {
@@ -54,10 +54,10 @@ class Question extends Component {
   };
   compsAnswer = ({ onClick, compsAnswer }) => {
     return (
-      <div>
+      <React.Fragment>
         {compsAnswer}
         <ButtonYes text="Got it!" onClick={() => onClick()} />
-      </div>
+      </React.Fragment>
     );
   };
   compsQuestion = ({ onClick, usersChoiceProperties, usersChoice }) => {
@@ -67,11 +67,11 @@ class Question extends Component {
     );
     const { path, question } = property;
     return (
-      <div>
+      <React.Fragment>
         <p>{question}</p>
         <ButtonYes onClick={() => onClick(path, true)} />
         <ButtonNo onClick={() => onClick(path, false)} />
-      </div>
+      </React.Fragment>
     );
   };
   findNextProperty(usersChoiceProperties, val) {
