@@ -31,7 +31,7 @@ class Game extends Grid {
     const compsPossibleChoices = randomPeopleSelection;
     const compsOneChoice = getOnePerson(randomPeopleSelection);
     const turn = 0;
-    // const windowDims = { height: window.innerHeight, width: window.innerWidth };
+
     this.setState({
       people,
       usersChoiceProperties,
@@ -52,7 +52,7 @@ class Game extends Grid {
     const height =
       window.innerHeight - bannerHeight - alertHeight - bottomHeight;
     const cardHeight = 2 * margin + (width < 450 ? 100 : 175);
-    console.log(bannerHeight, alertHeight, bottomHeight);
+
     const cardsInWidth = Math.floor(width / cardWidth);
     const cardsInHeight = Math.floor(height / cardHeight);
 

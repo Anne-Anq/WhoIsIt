@@ -18,7 +18,7 @@ class Question extends Component {
   };
   usersQuestion = ({ onClick, compsChoiceProperties }) => {
     return (
-      <React.Fragment className="input-group">
+      <div className="input-group">
         <select
           className="custom-select"
           id="inputGroupSelect04"
@@ -46,7 +46,7 @@ class Question extends Component {
             Ask
           </button>
         </div>
-      </React.Fragment>
+      </div>
     );
   };
   handleChange = event => {
