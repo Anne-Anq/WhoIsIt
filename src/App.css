@@ -29,8 +29,8 @@
   }
 
   .container {
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
   }
   .bottom-part {
     margin: 0;

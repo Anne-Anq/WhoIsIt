@@ -132,12 +132,12 @@ let people = [
     name: "Tagir",
     isMan: true
   },
-  {
-    name: "Tia",
-    isWoman: true,
-    isBaby: true,
-    isHolding: true
-  },
+  // {
+  //   name: "Tia",
+  //   isWoman: true,
+  //   isBaby: true,
+  //   isHolding: true
+  // },
   {
     name: "Tracey",
     hasGlasses: true,

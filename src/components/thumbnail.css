@@ -40,3 +40,8 @@
     padding: 2px;
   }
 }
+@media screen and (max-height: 657px) {
+  .card {
+    margin: 3px;
+  }
+}

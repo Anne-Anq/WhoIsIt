@@ -44,7 +44,7 @@ class Game extends Grid {
   }
   maxImgBySize = () => {
     const width = document.querySelector("#grid").clientWidth;
-    const margin = width < 450 ? 2 : 10;
+    const margin = width < 450 ? 2 : window.innerHeight <= 657 ? 3 : 10;
     const cardWidth = 2 * margin + (width < 450 ? 80 : 140);
     const bannerHeight = document.querySelector(".banner").clientHeight;
     const alertHeight = document.querySelector(".alert-container").clientHeight;
@@ -77,7 +77,7 @@ class Game extends Grid {
     return (
       <React.Fragment>
         Nope, it's not {name}. Unselect someone else to keep playing and try
-        again!}
+        again!
       </React.Fragment>
     );
   };

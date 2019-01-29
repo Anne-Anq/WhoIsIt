@@ -4,17 +4,28 @@
 }
 
 .alert-container {
-  height: 130px;
+  height: 60px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+  overflow: hidden;
 }
 .alert.alert-info {
   width: 80%;
-  max-width: 500px;
+  max-width: 800px;
   margin: 5px;
   text-align: end;
   animation: alert-appear 0.5s cubic-bezier(0.17, 0.67, 0.73, 1.23) forwards;
+}
+@media screen and (max-width: 1000px) {
+  .alert-container {
+    height: 85px;
+  }
+}
+@media screen and (max-width: 534px) {
+  .alert-container {
+    height: 108px;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -30,7 +41,7 @@
     padding: 0.15rem;
   }
   .alert-container {
-    height: 75px;
+    height: 55px;
   }
 }
 @keyframes alert-appear {
