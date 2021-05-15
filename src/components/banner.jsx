@@ -18,8 +18,8 @@ const Banner = ({ turn }) => {
         )}
         {turn === 2 && (
           <div className="alert alert-info" role="alert">
-            Click on the persons that do not match the computer's description to
-            hide them and narrow the selection.
+            Eliminate the people that do <b>not</b> match the computer's
+            description by clicking on them.
           </div>
         )}
       </div>

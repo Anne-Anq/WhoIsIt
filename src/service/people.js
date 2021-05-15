@@ -3,79 +3,70 @@ let people = [
     name: "Alice",
     hasGlasses: true,
     hasScarf: true,
-    hasCurlyHair: true
+    hasCurlyHair: true,
   },
   {
     name: "Anne",
     hasGlasses: true,
     hasFacialHair: true,
-    hasMustach: true
+    hasMustach: true,
   },
   {
     name: "Bill",
     hasFacialHair: true,
     hasGlasses: true,
     hasHeadPiece: true,
-    isMan: true
+    isMan: true,
   },
-  // {
-  //   name: "Diana",
-  //   hasBangs: true,
-  //   isHolding: true
-  // },
   {
     name: "Eli",
     isBlonde: true,
     hasHat: true,
     hasHeadPiece: true,
-    hasFur: true
+    hasFur: true,
   },
   {
     name: "Emika",
     hasScarf: true,
-    hasGlasses: true
+    hasGlasses: true,
   },
-  // {
-  //   name: "Emilien",
-  //   isMan: true
-  // },
   {
     name: "Emmanuelle",
     hasFacialHair: true,
     hasMustach: true,
     hasHat: true,
     hasHeadPiece: true,
-    hasFur: true
+    hasFur: true,
   },
   {
     name: "Fathi",
     isMan: true,
     hasGlasses: true,
     hasFacialHair: true,
-    hasTie: true
+    hasTie: true,
   },
   {
     name: "Juju",
     hasFur: true,
-    hasScarf: true
+    hasScarf: true,
   },
   {
     name: "Julia",
     hasHeadPiece: true,
-    hasBangs: true
+    hasBangs: true,
   },
   {
     name: "Ken",
     hasGlasses: true,
     hasTie: true,
     isMan: true,
-    isHolding: true
+    isHolding: true,
   },
   {
     name: "Kenny",
     isMan: true,
     hasFacialHair: true,
-    hasHeadPiece: true
+    hasHeadPiece: true,
   },
   {
     name: "Ludo",
@@ -84,13 +75,13 @@ let people = [
     hasFacialHair: true,
     hasMustach: true,
     isMan: true,
-    hasFur: true
+    hasFur: true,
   },
   {
     name: "Marion",
     hasHeadPiece: true,
     hasHat: true,
-    hasFur: true
+    hasFur: true,
   },
   {
     name: "Mathias",
@@ -100,12 +91,12 @@ let people = [
     hasMustach: true,
     isMan: true,
     hasScarf: true,
-    hasFur: true
+    hasFur: true,
   },
   {
     name: "Mathieu",
     isBlonde: true,
-    isMan: true
+    isMan: true,
   },
   {
     name: "Pedro",
@@ -113,7 +104,7 @@ let people = [
     hasHeadPiece: true,
     hasFacialHair: true,
     isMan: true,
-    hasFur: true
+    hasFur: true,
   },
   {
     name: "Poisson",
@@ -121,56 +112,50 @@ let people = [
     hasHeadPiece: true,
     isMan: true,
     hasScarf: true,
-    hasFur: true
+    hasFur: true,
   },
   {
     name: "Rosie",
     hasHat: true,
-    hasHeadPiece: true
+    hasHeadPiece: true,
   },
   {
     name: "Tagir",
-    isMan: true
+    isMan: true,
   },
-  // {
-  //   name: "Tia",
-  //   isWoman: true,
-  //   isBaby: true,
-  //   isHolding: true
-  // },
   {
     name: "Tracey",
     hasGlasses: true,
-    hasBangs: true
+    hasBangs: true,
   },
   {
     name: "Willy",
     hasHeadPiece: true,
-    isMan: true
+    isMan: true,
   },
   {
     name: "Yana",
     hasHeadPiece: true,
     hasHat: true,
     hasMustach: true,
-    hasGlasses: true
+    hasGlasses: true,
   },
   {
     name: "Zlatka",
     hasWeddingDress: true,
-    hasHeadPiece: true
-  }
+    hasHeadPiece: true,
+  },
 ];
-const getNumOfPeople = num => {
-  const peopleOnly = people.map(p => ({ ...p }));
+const getNumOfPeople = (num) => {
+  const peopleOnly = people.map((p) => ({ ...p }));
   shuffleArray(peopleOnly);
   return peopleOnly.slice(0, num);
 };
-const clone = arr => {
-  return arr.map(a => ({ ...a }));
+const clone = (arr) => {
+  return arr.map((a) => ({ ...a }));
 };
-const getPeopleAndAttr = array => {
-  const peopleAndAttr = array.map(d => {
+const getPeopleAndAttr = (array) => {
+  const peopleAndAttr = array.map((d) => {
     d.isNotUsersChoice = false;
     d.isNotCompsChoice = false;
     return d;
@@ -178,13 +163,13 @@ const getPeopleAndAttr = array => {
   return peopleAndAttr;
 };
 
-const getOnePerson = arr => {
+const getOnePerson = (arr) => {
   const N = arr.length;
   const randomNum = Math.floor(Math.random() * (N + 1));
   return arr[randomNum];
 };
 
-const shuffleArray = array => {
+const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
